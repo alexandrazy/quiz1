@@ -1,5 +1,22 @@
 <%- include('../partials/header') %>
 
+<h1>Welcome to the index page</h1>
+
+<div class="clucks-cards">
+  <% for (let cluck of clucks) { %> 
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= cluck.image_url %>
+        </h5>
+        <p class="card-text">
+          <%= cluck.content %> <br>
+        
+        </p>
+      </div>
+    </div>
+  <% } %>
+</div>
 
 
 <%- include('../partials/footer') %>
