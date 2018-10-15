@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Clucks</title>
+
+
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+
+    <script src="/scripts/jquery-3.3.1.slim.min.js"></script>
+    <script src="/scripts/popper.min.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
+</head>
+
+ <body>
+
+
+<header>
+<nav class="navbar navbar-expand bg-white">
+<img class="welcome-poster" src="/images/rooster.png" alt="Rooster Icon">
+  <a href="/" class="navbar-brand text-dark" style="text-dark">Cluckr</a>
+
+  <div class="collapse navbar-collapse">
+
+  <% if (username) { %>
+  <span class="navbar-text text-light ">
+     <%= username %>
+  </span>
+  <form action="/sign_out" method="POST" class="form-inline">
+    <button class="btn btn-secondary">Sign Out</button>
+  </form>
+<% } else { %>   
+      <form action="/sign_in" method="POST" class="form-inline ml-auto">
+        <input
+          type="text"
+          class="form-control mr-2"
+          username="username"
+          placeholder="username"
+        >
+        <button class="btn btn-secondary" type="submit">Sign In </button>
+      </form>        
+<% } %>
+
+  </div>
+</nav>
+</header>
+
+
+<main class="container-fluid">
